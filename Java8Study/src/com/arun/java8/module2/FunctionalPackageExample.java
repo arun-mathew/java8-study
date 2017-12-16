@@ -27,7 +27,7 @@ public class FunctionalPackageExample {
 
 	
 		//Create a method which accepts list and condition based on that condition print the list//
-		performConditionaly(persons, p -> p.getLastName().startsWith("m"), p -> System.out.println(p));
+		performConditionaly(persons, p -> p.getLastName().startsWith("m"), p -> System.out.println(p.getFirstName()));
 
 	}
 
