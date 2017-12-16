@@ -1,4 +1,4 @@
-package com.arun.java8;
+package com.arun.java8.module1;
 
 import java.util.function.Predicate;
 import java.util.stream.IntStream;
