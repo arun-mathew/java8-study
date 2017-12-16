@@ -3,6 +3,7 @@ package com.arun.java8.module2;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 import com.arun.java8.module1.Person;
@@ -22,20 +23,20 @@ public class FunctionalPackageExample {
 
 
 		//Create a method to print all the elements in the list//
-		printConditionaly(persons, p -> true);
+		performConditionaly(persons, p -> true, p -> System.out.println(p));
 
 	
 		//Create a method which accepts list and condition based on that condition print the list//
-		printConditionaly(persons, p -> p.getLastName().startsWith("m"));
+		performConditionaly(persons, p -> p.getLastName().startsWith("m"), p -> System.out.println(p));
 
 	}
 
-	private static void printConditionaly(List<Person> persons, Predicate<Person> predicate) {
+	private static void performConditionaly(List<Person> persons, Predicate<Person> predicate, Consumer<Person> consumer) {
 
 		System.out.println("Within printConditionaly");
 		for(Person p : persons) {
 			if(predicate.test(p)) {
-				System.out.println(p);
+				consumer.accept(p);
 			}
 		}
 
